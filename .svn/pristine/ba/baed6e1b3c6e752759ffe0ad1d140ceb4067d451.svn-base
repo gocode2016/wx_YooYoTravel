@@ -1,0 +1,6 @@
+/* pages/Home/Map/Map.wxss */
+
+page{
+  width: 100%;
+  height: 100%;
+}

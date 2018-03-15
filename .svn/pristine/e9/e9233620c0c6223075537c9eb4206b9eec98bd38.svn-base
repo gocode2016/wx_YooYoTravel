@@ -1,0 +1,60 @@
+/* pages/Profile/order/orderDetail.wxss */
+
+page {
+    height:100%;
+}
+
+.greybg {
+    background-color: #f4f4f4;
+    height: 100%
+}
+
+.m-od-warp {
+  background-color: #fff;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+
+.m-od-warp .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.m-od-warp .item .left {
+  flex: 1;
+  position: relative;
+  text-align: left;
+}
+
+.m-od-warp .item .right {
+  flex: 1;
+  position: relative;
+  text-align: right;
+}
+
+.m-od-warp .item-2 {
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.m-od-warp .item-2 .pic {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  background-color: #f4f4f4;
+}
+
+.m-od-warp .item-2 .name {
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}

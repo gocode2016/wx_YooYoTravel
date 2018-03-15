@@ -1,0 +1,120 @@
+<!--pages/Profile/order/orderDetail.wxml-->
+<scroll-view scroll-y="true" class="greybg">
+  <view class="m-od-warp">
+    <view class="item" style="border-bottom: 1px solid #d9d9d9;">
+      <view class="left"><text>交易单号</text></view>
+      <view class="right"><text>{{order_no}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>订单状态</text></view>
+      <view class="right"><text style="color: #ff5151;">{{state_label}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>数量</text></view>
+      <view class="right"><text>{{order_count}}份</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>总价</text></view>
+      <view class="right"><text style="color: #ff5151;">{{total_price}}元</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>实付金额</text></view>
+      <view class="right"><text style="color: #ff5151;">{{pay_price}}元</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>下单时间</text></view>
+      <view class="right"><text>{{order_time}}</text></view>
+    </view>
+  </view>
+
+  <view class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item-2">
+      <view>
+          <image src="{{logo_rsurl}}" alt="" class="pic"></image>
+      </view>
+      <view style="margin-top: 8rpx;">
+        <text class="name">{{product_name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item">
+      <view class="left">
+        <text style="font-size: 30rpx;">{{sku_detail_name}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left"><text>数量</text></view>
+      <view class="right"><text>{{total_product_count}}份</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>订单状态</text></view>
+      <view class="right"><text style="color: #ff5151;">{{sku_state_label}}</text></view>
+    </view>
+  </view>
+
+  <view wx:if="{{base_type==='hotel'}}" class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item" style="border-bottom: 1px solid #d9d9d9;">
+      <view class="left">
+        <text style="font-size: 30rpx;">酒店信息</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">
+        <text style="font-size: 30rpx;">{{merchant_name}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left"><text>酒店类型：{{sku_detail_name}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left">入住日期：<text style="color: #3dc05b;">{{checkin_time}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left">离店日期：<text style="color: #3dc05b;">{{checkout_time}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>入住人姓名：{{receiver_name}}</text></view>
+    </view>
+  </view>
+
+  <view wx:if="{{base_type==='ticket'}}" class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item-2">
+      <view class="left"><text>电子券</text></view>
+      <view class="left"><text>（有效时间至：{{bill_end_date}}）</text></view>
+    </view>
+    <view class="item-2">
+      <view class="left"><text>客服热线：</text></view>
+      <view class="left"><text>4008006011</text></view>
+    </view>
+  </view>
+
+  <view wx:if="{{base_type==='ticket'}}" class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item">
+      <view class="left">
+        <text style="font-size: 30rpx;">券号名称:{{sku_detail_name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="m-od-warp" style="margin-top: 20rpx;">
+    <view class="item" style="border-bottom: 1px solid #d9d9d9;">
+      <view class="left">
+        <text wx:if="{{base_type==='ticket'}}" style="font-size: 30rpx;">取票人信息</text>
+        <block wx:else>
+          <text style="font-size: 30rpx;">联系人信息</text>
+        </block>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left"><text>姓名</text></view>
+      <view class="right"><text>{{receiver_name}}</text></view>
+    </view>
+    <view class="item">
+      <view class="left"><text>联系手机</text></view>
+      <view class="right"><text>{{receiver_mobile}}</text></view>
+    </view>
+  </view>
+
+</scroll-view>

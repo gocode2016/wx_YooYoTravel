@@ -1,0 +1,10 @@
+<template name="sectionHeader">
+   <view class="sectionHeader">
+      <view class="topView">
+        <view style="width:4px;height:20px;background-color:limegreen;"></view>
+        <text style="font-size: 16px; color:gray;margin:0rpx 30rpx;">{{data}}</text>
+      </view>
+      
+      <view class="dotline"></view>
+   </view> 
+</template>

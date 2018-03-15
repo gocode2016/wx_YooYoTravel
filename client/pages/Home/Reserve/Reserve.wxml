@@ -1,0 +1,16 @@
+<!--pages/Home/Reserve/Reserve.wxml-->
+<view class='container'>
+ <text style='width:100%;background-color:white;font-size:28rpx;padding:30rpx;'>{{sku.sku_name}}</text>
+ <view class='secondCell'>
+    <view class='usableCount'>
+      <text>
+     购买份数(本套餐每份适用\n{{sku.usable_adult_count}}成人{{sku.usable_child_count}}儿童)         </text>
+    </view>
+    
+    <view class='counter'>
+       <text>-</text>
+       <text>1</text>
+       <text>+</text>
+    </view>
+ </view>
+ </view>

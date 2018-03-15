@@ -1,0 +1,87 @@
+<import src="../../../template/common.wxml"/>
+<import  src="../../../vendor/wxParse/wxParse.wxml"/>
+<view class='container' wx:if='{{product}}'>
+  <view class='headContainer'>
+      <image class='bannerImg' src="https:{{product.banner_rsurl}}" mode="scaleToFill">
+    </image>
+    <text class='bannerTitle'>{{product.product_name}}</text>
+  </view>
+
+  <block wx:for="{{product.skus}}" wx:key="*this">
+    <view class='skuItem'>
+      <view style='display:flex;flex-direction: column;'>
+        <text>{{item.sku_name}}</text>
+        <button style='width:160rpx;height:50rpx;line-height:50rpx; font-size:24rpx; color:gray;text-align: center;'>票型说明</button>
+      </view>
+      
+      <view style='display: flex;flex-direction: row;'>
+        <text style='color:orange;font-size:24rpx;margin:8rpx;'>¥{{item.sale_price}}/份</text>
+        <button style='width:120rpx;height:55rpx;line-height:55rpx; font-size:26rpx; background-color:orange;color:white;text-align: center;' bindtap='toReserve' data-id='{{item.id}}'>预定</button>
+      </view>
+      
+    </view>
+  </block>
+
+  <template is="sectionHeader" data="{{data:'行程亮点'}}"/>
+  <view class='pointContainer'>
+    <text style='padding:10rpx;'>{{product.skus[0].travel_itinerarys[0].point_intro}}</text>
+    <view class='pointItemContainer'>
+        <view class='pointItem' wx:for="{{product.skus[0].travel_itinerarys[0].points}}" wx:key="*this" wx:if="{{index<=2}}">
+            <image src='https:{{item.banner_rsurl}}' style='height:130rpx;'></image>
+            <text>{{item.title}}</text>
+        </view>
+    </view>
+  </view>
+
+
+
+    
+    <view class='travelContainer' wx:for="{{product.skus[0].travel_itinerarys[0].travels}}" wx:key="*this" wx:for-item="travel" wx:for-index="travelIdx">
+    <view class='curDay'>
+        <view class='day'><text>{{travel.cur_day}}</text></view>
+        <text class='address'>{{travel.address}}</text>
+    </view>
+
+     <view style='width:100%;' wx:for="{{travel.items}}" wx:key="*this" wx:for-item="t_Item" wx:for-index="t_ItemIdx">
+       <view style='width:100%; padding:20rpx; 30rpx;font-size:30rpx;color:orange;background-color: rgba(0, 0, 0, 0.1);box-sizing: border-box;'><text>{{t_Item.timer}}</text></view>
+        <view class='travelItem' bindtap='toMap'>
+          <view class='travelImageView'>
+          <image src='https:{{t_Item.banner_rsurl}}' mode='scaleToFill'></image>
+          </view>
+          <view class='remark'>
+           <text style='font-size:30rpx;'>{{t_Item.title}}</text>
+           <text style='font-size:24rpx;color:gray'>{{t_Item.remark}}</text>
+        </view>
+       </view>
+       
+       
+    </view> 
+
+    </view>
+     
+
+  
+  
+
+   
+  <template is="sectionHeader" data="{{data:'购买须知'}}"/>
+  <view class='warm_prompt'>
+    <template is="wxParse" data="{{wxParseData:buy_know.nodes}}"/>
+  </view>
+  <template is="sectionHeader" data="{{data:'温馨提醒'}}"/>
+  <view class='warm_prompt'>
+    <template is="wxParse" data="{{wxParseData:warm_prompt.nodes}}"/>
+  </view>
+
+
+  <view class='salepanel'>
+     <view class='zixun' bindtap='call'>
+       <text>咨询</text>
+     </view>
+     <view class='sale' bindtap="toReserve">
+       <text class="commonPriceStyle">{{product.sale_price}}</text>
+       <text style='font-size:28rpx;'>立即预定</text>
+     </view>
+
+  </view>
+</view>

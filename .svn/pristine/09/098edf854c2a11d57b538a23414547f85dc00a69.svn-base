@@ -1,0 +1,44 @@
+.sectionHeader{
+    width: 100%;
+    display: flex; 
+    background-color: white;
+    flex-direction: column;
+    margin-top: 20rpx;
+    
+    
+}
+.topView{
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 80rpx;
+    font-size: 33rpx;
+    padding-left: 30rpx;
+    color: red;
+    text-align: center;
+    background-color: white;
+   
+
+}
+.dotline{
+   height:1rpx;
+   background-color:lightGray;
+   width:100%;
+   margin: 10rpx;
+   box-sizing: border-box;
+   
+}
+.commonPriceStyle{
+   font-size: 32rpx;
+}
+.commonPriceStyle::after{
+   content: '/份';
+   font-size: 18rpx;
+
+}
+.commonPriceStyle::before{
+   content: '¥';
+   font-size: 18rpx;
+
+}

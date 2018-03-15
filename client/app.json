@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/Home/Home",
+    "pages/MemberBenefit/MemberBenefit",
+    "pages/Discover/Discover",
+    "pages/Profile/Profile",
+    "pages/Profile/login",
+    "pages/Home/Detail/HomeDetail",
+    "pages/Home/Reserve/Reserve",
+    "pages/Home/Map/Map"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarTitleText": "国汇优游",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "images/bar_home.png",
+        "selectedIconPath": "images/bar_home.png"
+      },
+      {
+        "pagePath": "pages/Discover/Discover",
+        "text": "资讯",
+        "iconPath": "images/bar_faxian.png",
+        "selectedIconPath": "images/bar_faxian.png"
+      },
+      {
+        "pagePath": "pages/Discover/Discover",
+        "text": "发现",
+        "iconPath": "images/bar_vip.png",
+        "selectedIconPath": "images/bar_vip.png"
+      },
+      {
+        "pagePath": "pages/Profile/Profile",
+        "text": "我的",
+        "iconPath": "images/bar_user.png",
+        "selectedIconPath": "images/bar_user.png"
+      }
+    ]
+  }
+}

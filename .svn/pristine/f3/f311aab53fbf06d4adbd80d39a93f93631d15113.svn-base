@@ -1,0 +1,65 @@
+<!--pages/Profile/Profile.wxml-->
+<view class="greybg">
+<view class="m-uc-top">
+  <view wx:if="{{!hasUserInfo}}">
+    <view>
+        <text>你还没有登陆哦</text>
+      </view>
+      <view class="flex-wrp">
+          <navigator url="login?title=navigate">
+            <button type="default">登录</button>
+          </navigator>
+          <button type="default" bindtap="onRegister">注册</button>
+      </view>
+  </view>
+  <block wx:else>
+  <view class="m-profile">
+    <image class="avatar" src="{{avatarUrl}}" alt=""></image>
+    <view class="info">
+                <view class="nickname">
+                    <text>{{mobile}}</text>
+                </view>
+                <view class="partner">
+                    <text>{{partner}}</text>
+                </view>
+                <view class="icon ion-ios-arrow-right top_right"></view>
+            </view>
+  </view>
+  </block>
+</view>
+
+  <view class="m-uc-menu">
+    <view class="list">
+        <view class="item" data-state="1" bindtap="toOrderList">
+             <image class="menu-icon" src="http://img02.camel.com.cn/image/zwuc_icon1.png" alt=""></image> 
+            <text class="txt">待付款</text>
+        </view>
+        <view class="item" data-state="2" bindtap="toOrderList">
+             <image class="menu-icon" src="http://img02.camel.com.cn/image/zwuc_icon2.png" alt=""></image> 
+            <text class="txt">待出行</text>
+        </view>
+        <view class="item" data-state="3" bindtap="toOrderList">
+             <image class="menu-icon" src="http://img02.camel.com.cn/image/zwuc_icon3.png" alt=""></image> 
+            <text class="txt">退款单</text>
+        </view>
+        <view class="item" bindtap="toOrderList">
+             <image class="menu-icon" src="http://img02.camel.com.cn/image/zwuc_icon4.png" alt=""></image> 
+            <text class="txt">全部订单</text>
+        </view>
+    </view>
+  </view>
+
+ <!-- <view class="m-uc-warp">
+  <view class="item">
+    <text>我的订单</text>
+  </view>
+  <view class="item">
+    <text>我的钱包</text>
+  </view>
+  <view class="lastitem">
+    <text>关于优游</text>
+  </view>
+ </view> -->
+
+  <button wx:if="{{hasUserInfo}}" class="btn-logout" bindtap="logout">退出登录</button>
+</view>

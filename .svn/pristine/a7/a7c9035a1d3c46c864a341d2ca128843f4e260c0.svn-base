@@ -1,0 +1,48 @@
+<import src="../../../template/common.wxml"/>
+<import  src="../../../vendor/wxParse/wxParse.wxml"/>
+<view class='container' wx:if='{{product}}'>
+  <view class='headContainer'>
+      <image class='bannerImg' src="https:{{product.banner_rsurl}}" mode="scaleToFill">
+    </image>
+    <text class='bannerTitle'>{{product.product_name}}</text>
+  </view>
+
+  <block wx:for="{{product.skus}}">
+    <view class='skuItem'>
+      <view style='display:flex;flex-direction: column;'>
+        <text>{{item.sku_name}}</text>
+        <button style='width:160rpx;height:50rpx;line-height:50rpx; font-size:24rpx; color:gray;text-align: center;'>票型说明</button>
+      </view>
+      
+      <view style='display: flex;flex-direction: row;'>
+        <text style='color:orange;font-size:24rpx;margin:8rpx;'>¥{{item.sale_price}}/份</text>
+        <button style='width:120rpx;height:55rpx;line-height:55rpx; font-size:26rpx; background-color:orange;color:white;text-align: center;'>预定</button>
+      </view>
+      
+    </view>
+  </block>
+  
+  
+
+   
+  <template is="sectionHeader" data="{{data:'购买须知'}}"/>
+  <view class='warm_prompt'>
+    <template is="wxParse" data="{{wxParseData:buy_know.nodes}}"/>
+  </view>
+  <template is="sectionHeader" data="{{data:'温馨提醒'}}"/>
+  <view class='warm_prompt'>
+    <template is="wxParse" data="{{wxParseData:warm_prompt.nodes}}"/>
+  </view>
+
+
+  <view class='salepanel'>
+     <view class='zixun'>
+       <text>咨询</text>
+     </view>
+     <view class='sale'>
+       <text>588</text>
+       <text>立即预定</text>
+     </view>
+
+  </view>
+</view>
