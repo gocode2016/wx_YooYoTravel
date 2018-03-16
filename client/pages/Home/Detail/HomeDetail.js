@@ -17,6 +17,14 @@ Page({
   onLoad: function (options) {
     let data = JSON.parse(options.data)
     this.getDetail(data.id)
+
+    wx.getStorage({
+      key: 'detail',
+      success: function(res) {
+        console.log("666")
+        console.log(res)
+      },
+    })
    
   },
   getDetail (id){

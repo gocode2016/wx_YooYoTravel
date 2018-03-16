@@ -1,0 +1,3 @@
+<!--pages/WebView/WebView.wxml-->
+<!-- https://www.yooyo.com/activity/341.html?rf=yooyo -->
+<web-view src="{{url}}"></web-view>

@@ -255,6 +255,12 @@ Page({
     let idx = e.currentTarget.dataset.idx
     let itemData = this.data.products[idx]
     let data =  JSON.stringify(itemData)
+
+     wx.setStorage({
+       key: 'detail',
+       data: data,
+     })
+
     // console.log(itemData)
     wx.navigateTo({
       url: './Detail/HomeDetail?data=' + data,

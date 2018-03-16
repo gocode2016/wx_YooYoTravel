@@ -33,6 +33,7 @@ page{
   justify-content:flex-end;
   align-items: center;
   margin-right: 30rpx;
+  
 }
 
 .counter text{
@@ -40,7 +41,7 @@ page{
   height: 65rpx;
   text-align: center;
   line-height: 65rpx;
-  border: 0.5rpx solid lightgray;
   border-radius: 4rpx;
-
+  border: 1rpx 1rpx solid lightgray;
+  
 }
